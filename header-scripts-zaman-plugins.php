@@ -21,3 +21,7 @@ include_once "inc/autoloader.php";
 $autoload = new Autoload_WP();
 $headerScripts = new HeaderScripts();
 $headerScripts->addHeaderScripts();
+
+
+$scriptsToHeader = new ScriptsToHeader();
+$scriptsToHeader->addScripts();
