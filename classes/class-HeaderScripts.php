@@ -7,7 +7,7 @@ class HeaderScripts{
     }
     
     function addAdminPages(){
-            add_menu_page("Header Scripts", "Header Scripts", "manage_options", "head-scripts", array($this,'headScriptsIndex'), "dashicons-store", 110);
+            add_menu_page("Header Scripts", "Header Scripts", "manage_options", "head-scripts", array($this,'headScriptsIndex'), "dashicons-media-code", 110);
     }
 
     function headScriptsIndex(){
@@ -22,7 +22,7 @@ class HeaderScripts{
         add_settings_section("head_scripts_section", "", array($this,'headScriptsSectionCallback'), 'head-scripts');
       
         //add setings field
-        add_settings_field("head_scripts_field", "Put the scripts here", array($this,'headScriptsFieldCallback'), "head-scripts", "head_scripts_section", array(
+        add_settings_field("head_scripts_field", "Add code between head tags", array($this,'headScriptsFieldCallback'), "head-scripts", "head_scripts_section", array(
             'label_for' => 'head_scripts_field',
             'class' => 'example-class'
         ));
@@ -37,7 +37,7 @@ class HeaderScripts{
 
     function headScriptsFieldCallback(){
         $value = esc_attr(get_option('head_scripts_field'));
-        echo '<textarea  class="header-scripts" name="head_scripts_field"  palceholder="Put the header code here">'. $value .'</textarea>';
+        echo '<textarea rows="10" cols="150" class="header-scripts" name="head_scripts_field"  palceholder="Put the header code here">'. $value .'</textarea>';
     }
 
 

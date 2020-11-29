@@ -5,7 +5,7 @@ class ScriptsToHeader{
     }
 
     function scriptsInHead() {
-        $value = esc_attr(get_option('head_scripts_field'));
-        echo html_entity_decode($value);
+        $value = get_option('head_scripts_field');
+        echo $value;
     }
 }
